@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Listado de Empleado
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-list >
+    <ion-list class="list-group-item" *ngFor="let x of empleado">
+      <ion-item>
+        <div>
+            <ion-label>
+              <h1 color="colorBlue">{{x.nombreEmpleado}}</h1>
+              <h3>{{x.sectorEmpleado}} - {{x.dni}}</h3>
+              <h4>{{x.dni}}</h4>
+                
+            </ion-label>
+            <ion-button class="btn btn-secondary display-5  float-end mt-3" color="secondary"(click)="eliminarEmpleado(x.id!)">
+              Eliminar
+          </ion-button>
+    
+           <ion-button class="btn btn-secondary display-5 float-end mt-3" (click)="prepararModificar(x.id!,x.nombreEmpleado,x.sectorEmpleado,x.sexo,x.edad,x.dni)">
+            Editar
+           </ion-button>
+  
+        </div>
+      </ion-item>
+    </ion-list>
+   
+
+  </ion-list>

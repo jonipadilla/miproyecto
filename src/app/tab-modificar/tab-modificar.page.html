@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> 
+      Modificar Empleado
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="formulario">
+      <ion-item>
+        <ion-label position="floating">Nro de Orden</ion-label>
+        <ion-input type="text" class="form-control" formControlName="id" > </ion-input>
+
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" class="form-control" formControlName="nombreEmpleado" > </ion-input>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Fecha</ion-label>
+
+        <ion-input type="date" class="form-control"  formControlName="fecha"> </ion-input>
+      </ion-item>
+      <ion-item>
+
+        <ion-label position="floating">Sector Empleado</ion-label>
+  
+        <ion-select class="form-select"  formControlName="sectorEmpleado"> 
+          <ion-select-option value="" disabled selected ></ion-select-option>
+          <ion-select-option value="ADMINISTRACION">ADMINISTRACION</ion-select-option>
+          <ion-select-option value="PRODUCCION">PRODUCCION</ion-select-option>
+          <ion-select-option value="MANTENIMIENTO">MANTENIMIENTO</ion-select-option>
+        </ion-select> 
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="secondary" expand="block" (click)="updateEmpleado()" >Modificar</ion-button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+
+
+
+    </ion-list>
+</ion-content>

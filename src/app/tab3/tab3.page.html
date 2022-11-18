@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista Empleados</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-button expand="block" (click)="setOpen(true)">Listar</ion-button>
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>LISTA</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          <ion-list >
+            <ion-list class="list-group-item" *ngFor="let x of empleado">
+              <ion-item>
+                <div>
+                    <ion-label>
+                      <h1 color="colorBlue">{{x.nombreEmpleado}}</h1>
+                      <h3>{{x.sectorEmpleado}} - {{x.dni}}</h3>
+                      <h4>{{x.dni}}</h4>                        
+                    </ion-label>
+                </div>
+              </ion-item>
+            </ion-list>
+           
+        
+          </ion-list>
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>
